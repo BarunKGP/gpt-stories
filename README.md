@@ -27,9 +27,11 @@ relations with VerbNet.
 
 ### Generating Candidate Continuations
 Our system generates candidate continuations using GPT-Neo. We experimented with two
-methods of generating a prompt. The first method was to simply use the last n tokens of the
-story, and the second method was to use the knowledge graph to form the first j tokens of the
-prompt and the story to form the last n-j tokens.
+methods of generating a prompt:
+
+1. Simply use the last `n` tokens of the story, 
+2. The second method was to use the knowledge graph to form the first `j` tokens of the
+prompt and the story to form the last `n-j` tokens.
 
 ### Scoring
 We developed four distinct knowledge-graph-based scoring functions to compare to a default of
