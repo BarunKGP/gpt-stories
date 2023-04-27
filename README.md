@@ -1,5 +1,5 @@
-# gpt-stories
-Using GPT-neo to create stories from a text prompt
+# gpt-stories: Using GPT-neo to create stories from a text prompt
+
 
 Large language models like those in the GPT suite have no concept of facts or
 relations; they simply follow a prompt with the statistically most likely continuation. This
@@ -35,20 +35,9 @@ prompt and the story to form the last n-j tokens.
 We developed four distinct knowledge-graph-based scoring functions to compare to a default of
 scoring all candidates equally well.
 
-| name | description|
----------------------
-| kg_scoring_fn | Our first scoring function is designed to reward reusing entities from the knowledge graph and
-penalize adding new entities and introducing contradictions. The score is calculated by simply
-subtracting the number of new entities and contradictions from the number of reused entities.
-Sentences that are exact repetitions of each other are also given an extremely low score,
-though in practice that did little to prevent repetitive stories as sentences with slight differences
-fail to be penalized.| \\
-| kg_scoring_fn2 | Our second scoring function is the simplest. It rewards reusing entities by returning the number
-of entities from the knowledge graph that are also mentioned in the candidate. | \\
-| kg_scoring_fn3 | Our third scoring function rewards reusing entities and penalizes adding new entities by
-calculating an F1 score. Entities in both the knowledge graph and the candidate are considered
-true positives, and entities in one but not the other are false positives (if they are in the
-candidate only) and false negatives (if they are in the knowledge graph only). | \\
-| kg_scoring_fn4 | Our third scoring function rewards reusing entities and penalizes adding new entities by
-calculating the BLEU score between the entities in the knowledge graph and the entities in the
-candidate. |
+| name | description |
+| ---- | ----------- |
+| kg_scoring_fn | Our first scoring function is designed to reward reusing entities from the knowledge graph and penalize adding new entities and introducing contradictions. The score is calculated by simply subtracting the number of new entities and contradictions from the number of reused entities. Sentences that are exact repetitions of each other are also given an extremely low score, though in practice that did little to prevent repetitive stories as sentences with slight differences fail to be penalized. |
+| kg_scoring_fn2 | Our second scoring function is the simplest. It rewards reusing entities by returning the number of entities from the knowledge graph that are also mentioned in the candidate. |
+| kg_scoring_fn3 | Our third scoring function rewards reusing entities and penalizes adding new entities by calculating an F1 score. Entities in both the knowledge graph and the candidate are considered true positives, and entities in one but not the other are false positives (if they are in the candidate only) and false negatives (if they are in the knowledge graph only). | 
+| kg_scoring_fn4 | Our third scoring function rewards reusing entities and penalizes adding new entities by calculating the BLEU score between the entities in the knowledge graph and the entities in the candidate. |
