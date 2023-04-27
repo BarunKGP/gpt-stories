@@ -41,3 +41,13 @@ scoring all candidates equally well.
 | kg_scoring_fn2 | Our second scoring function is the simplest. It rewards reusing entities by returning the number of entities from the knowledge graph that are also mentioned in the candidate. |
 | kg_scoring_fn3 | Our third scoring function rewards reusing entities and penalizes adding new entities by calculating an F1 score. Entities in both the knowledge graph and the candidate are considered true positives, and entities in one but not the other are false positives (if they are in the candidate only) and false negatives (if they are in the knowledge graph only). | 
 | kg_scoring_fn4 | Our third scoring function rewards reusing entities and penalizes adding new entities by calculating the BLEU score between the entities in the knowledge graph and the entities in the candidate. |
+
+---
+
+### Contributors:
+Developed by students at Georgia Institute of Technology:
+- Barun Das <bdas31@gatech.edu>
+- Lasya Venneti <svenneti3@gatech.edu>
+- Kaylah Facey
+
+                      
